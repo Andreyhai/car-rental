@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&family=Hanuman:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.infoBlock {
+    padding: 4rem 2rem;
+    background: #f9f9f9;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+
+.point {
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    text-align: center;
+    // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+
+    .header {
+
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        .count {
+            background: #5937E0;
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            border-radius: 100%;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-family: 'Work Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            color: #FFFFFF;
+
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+
+        }
+
+        .title {
+            font-family: 'Work Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 23px;
+
+            color: #000000;
+
+        }
+    }
+
+
+
+    .text {
+
+        width: 550px;
+        // height: 42px;
+
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+
+        color: rgba(0, 0, 0, 0.6);
+
+
+        flex: none;
+        order: 1;
+        align-self: stretch;
+        flex-grow: 0;
+
+        max-height: 42px; // ограничиваем по высоте
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; // кол-во строк
+        -webkit-box-orient: vertical;
+        transition: max-height 0.3s ease;
+
+    }
+
+    &:hover .text {
+        max-height: 500px; // при наведении показываем полный текст
+        -webkit-line-clamp: unset; // убираем обрезку
+        transition-duration: 2000ms;
+    }
+}

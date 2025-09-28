@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&family=Hanuman:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.hero {
+  padding: 3rem 2rem;
+
+  .container {
+    max-width: 1200px;
+    min-height: 500px;
+    margin: 0 auto;
+    background:
+      url("../../assets/test.svg") no-repeat,
+      url("../../assets/Imgs.png") no-repeat,
+      #5937E0; // цвет кладём последним слоем
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 72px 78.5px 78px 78.5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    gap: 5rem;
+
+    /* Каждой картинке своё позиционирование */
+    background-position: 10% 10%, 60% 100%;
+    background-size: auto, auto; // или например contain/cover для подгонки
+
+    .info {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.4rem;
+
+      .title {
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 70px;
+
+        /* Default/White */
+        color: #FFFFFF;
+
+
+        /* Inside auto layout */
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        z-index: 1;
+
+      }
+
+      .description {
+        /* Aliquam adipiscing velit semper morbi. Purus non eu cursus porttitor tristique et gravida. Quis nunc interdum gravida ullamcorper */
+        width: 80%;
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+
+        color: #FFFFFF;
+
+
+        /* Inside auto layout */
+        flex: none;
+        order: 2;
+        flex-grow: 0;
+        z-index: 2;
+
+      }
+
+      .button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 13px 28px;
+        gap: 10px;
+
+        width: 154px;
+        height: 40px;
+        border: none;
+        background: #FF9E0C;
+        border-radius: 12px;
+        color: #FFFFFF;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+
+        cursor: pointer;
+        transition: all 0.3s ease; // плавность
+        order: 3;
+
+        &:hover {
+          background: #e78d00; // чуть темнее
+          transform: translateY(-3px) scale(1.05); // поднимается и увеличивается
+          box-shadow: 0 8px 20px rgba(255, 158, 12, 0.4); // красивая тень
+        }
+
+        &:active {
+          transform: translateY(0) scale(0.98); // эффект нажатия
+          box-shadow: 0 4px 10px rgba(255, 158, 12, 0.2);
+        }
+      }
+
+    }
+
+    .form {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.8rem;
+      background: #fff;
+      width: 20%;
+      padding: 40px;
+      border-radius: 20px;
+
+      .formTitle {
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 33px;
+        /* identical to box height */
+        text-align: center;
+
+        color: #000000;
+
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+
+      }
+
+      .formButton {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 13px 28px;
+
+        background: #FF9E0C;
+        border-radius: 12px;
+        border: none;
+        background: #FF9E0C;
+        border-radius: 12px;
+        color: #FFFFFF;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+
+        /* Inside auto layout */
+        flex: none;
+        order: 2;
+        align-self: stretch;
+        flex-grow: 0;
+
+        cursor: pointer;
+        transition: all 0.3s ease; // плавность
+        order: 3;
+
+        &:hover {
+          background: #e78d00; // чуть темнее
+          transform: translateY(-3px) scale(1.05); // поднимается и увеличивается
+          box-shadow: 0 8px 20px rgba(255, 158, 12, 0.4); // красивая тень
+        }
+
+        &:active {
+          transform: translateY(0) scale(0.98); // эффект нажатия
+          box-shadow: 0 4px 10px rgba(255, 158, 12, 0.2);
+        }
+
+      }
+    }
+
+  }
+}
+
+.dropdown {
+  width: 100%;
+  position: relative;
+  border-radius: 12px;
+  font-family: "Inter", sans-serif;
+
+  .header {
+    width: 100%;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #333;
+
+    &:hover {
+      background: #f5f5f5;
+    }
+
+    .svg {
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .list {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    list-style: none;
+    padding: 6px 0;
+    margin: 0;
+    z-index: 10;
+    animation: fadeIn 0.25s ease;
+  }
+
+  .item {
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #f5f5f5;
+    }
+  }
+}
+
+.dateInput {
+  width: 100%;
+  font-family: "Inter", sans-serif;
+
+  .label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+    color: #555;
+  }
+
+  .wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .input {
+      width: 100%;
+      padding: 10px 16px;
+      border-radius: 12px;
+      border: 1px solid #e0e0e0;
+      font-size: 16px;
+      cursor: pointer;
+
+      &:hover {
+        border-color: #ccc;
+      }
+    }
+
+    .arrow {
+      position: absolute;
+      right: 12px;
+      width: 16px;
+      height: 16px;
+      pointer-events: none;
+      transition: transform 0.3s ease;
+    }
+  }
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
